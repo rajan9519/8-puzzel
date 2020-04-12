@@ -4,10 +4,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// this class will containg each 3x3 grid with corresponding costs.
 class board
 {
 public:
     int arr[3][3],manhattan;
+    // dist function will give the manhattan distance between the current bord and goal.
     int dist(int arr[3][3])
     {
         int sum = 0;
@@ -55,6 +57,7 @@ public:
         }
         return sum;
     }
+    // custom constructors
     board()
     {
         for(int i=0;i<3;i++)
@@ -77,6 +80,7 @@ public:
         }
         manhattan = dist(arr1);
     }
+    // overriting the equal to operator for the board class.
     bool operator==(const board& that)
     {
         if(manhattan == that.manhattan)
@@ -118,6 +122,7 @@ public:
         }
         manhattan = that.manhattan;
     }
+    // prints the current board elements.
     void print()
     {
         for(int i=0;i<3;i++)
